@@ -1,0 +1,31 @@
+<div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3 centerbox">
+            <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+                <h3 class="h3 mb-3 font-weight-normal text-center">Please sign in</h3>
+                <div class="form-group">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label> Enter email </mat-label>
+                        <input matInput placeholder="Placeholder" formControlName="email" placeholder="Enter email">
+                        <mat-error *ngIf="signinForm.invalid"> Please enter email </mat-error>
+
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Placeholder" type="password" formControlName="password"
+                            placeholder="Password">
+                    </mat-form-field>
+                </div>
+                <button mat-raised-button color="primary">Sign in</button>
+                <div class="contentSpace">
+                <a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Register new Author</a>
+                <a [routerLink]="['/home']">Continue as Guest</a>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>

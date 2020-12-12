@@ -1,0 +1,41 @@
+<app-head></app-head>
+
+<hr>
+<form [formGroup]="blogForm" >
+    <div class='row'>
+    <div class="form-group col-md-6">
+      <label for="title">Title:</label>
+      <input type="title" class="form-control" id="title" formControlName="title">
+      <div *ngIf="blogForm.controls['title'].invalid &&    blogForm.controls['title'].touched" class="alert alert-danger">
+        Title is required.
+    </div>
+    </div>
+   
+    <div class="form-group">
+        <label>Category</label>
+        <div class="input-group">
+          <div class="input-group-append selectCompny">
+
+            <select class="custom-select custom-select-lg" formControlName="category">
+              <option *ngFor="let item of category" [value]="item">
+                {{item}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  </div> 
+  <div>
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <span *ngIf="blogForm.value.image"><img  [src]="profileImge()" /></span>
+    
+  </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" rows="15" id="description" formControlName="description"></textarea>
+        <div *ngIf="blogForm.controls['description'].invalid &&    blogForm.controls['description'].touched" class="alert alert-danger">
+            Description is required.
+        </div>
+      </div>
+   
+    <button type="submit" class="btn btn-primary" (click)="saveForm()">Submit</button>
+  </form>

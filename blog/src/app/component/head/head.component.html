@@ -1,0 +1,31 @@
+<header class="header clearfix">
+    <nav>
+        <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+                <a type="button" class="btn btn-link" [routerLink]="['/home']" [routerLinkActive]="'active'" >
+                  Home
+                </a>
+            </li>
+            <li class="nav-item" *ngIf="show">
+                <a type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" [routerLink]="['/addblog']" [routerLinkActive]="'active'">
+                  Add Blog
+                </a>
+            </li>
+            <li class="nav-item" >
+            <ng-container *ngIf="show; else elseTemplate">
+                <a href="javascript:;" type="button" class="btn btn-link" (click)="logout()">
+                    Logout
+                </a>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <a href="javascript:;" type="button" class="btn btn-link" (click)="login()">
+                    Login
+                </a>
+            </ng-template>
+              
+            </li>
+        </ul>
+    </nav>
+    <h3 class="text-muted">Blog Website</h3>
+</header>
+<hr>

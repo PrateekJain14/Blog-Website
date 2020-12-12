@@ -1,0 +1,49 @@
+<div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3 centerbox">
+          <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+            <h3 class="h3 mb-3 font-weight-normal text-center">Update Your Details</h3>
+  
+  
+            <div class="form-group">
+                <mat-form-field appearance="outline">
+                  <mat-label>  Name </mat-label>
+                  <input matInput placeholder="Placeholder" formControlName="name" placeholder=" Name" required >
+                </mat-form-field>
+  
+                <div *ngIf="signupForm.controls['name'].invalid &&    signupForm.controls['name'].touched" class="alert alert-danger">
+                  Name is required.( Min 3 character  )
+              </div>
+  
+            </div>
+
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+               <mat-label> Email </mat-label>
+               <input matInput placeholder="Placeholder"  formControlName="email" placeholder="email" >
+              </mat-form-field>
+              <div *ngIf="signupForm.controls['email'].invalid &&    signupForm.controls['email'].touched" class="alert alert-danger">
+                Email is required.
+            </div>
+           </div>
+  
+  
+  
+            <div class="form-group">
+              <mat-form-field appearance="outline">
+                <mat-label> password </mat-label>
+                <input matInput  type="password"   placeholder="Placeholder" formControlName="password" placeholder="password" >
+              </mat-form-field>
+  
+              <div *ngIf="signupForm.controls['password'].invalid &&    signupForm.controls['password'].touched" class="alert alert-danger">
+  
+                Password is required ( Min 6 character  ).
+  
+            </div>
+            </div>
+            <button mat-raised-button color="primary"  [disabled]="!signupForm.valid" >Sign Up</button>
+        </form>
+        </div>
+    </div>
+  </div>
+  

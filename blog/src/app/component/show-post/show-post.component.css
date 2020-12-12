@@ -1,0 +1,13 @@
+.category{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(24, 242, 250);
+}
+
+a{
+    cursor: pointer;
+}
+
+a:hover,.active{
+    color: blue !important
+}

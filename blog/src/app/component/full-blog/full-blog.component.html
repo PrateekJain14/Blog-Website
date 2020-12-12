@@ -1,0 +1,20 @@
+<app-head></app-head>
+  
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2>{{fullBlog["title"]}}</h2>
+        <h6 >{{fullBlog["createdAt"] | date}}</h6>
+
+        <div *ngIf="image" style="height:200px; width: 800px; text-align: center;">
+            <img  [src]="profileImge()" />
+        </div>
+        <p style="padding-top: 50px;">{{fullBlog["description"]}}</p>
+
+      </div>
+
+      <p style="float: right;">Author: {{authorName}}</p>
+
+    </div>
+   
+  

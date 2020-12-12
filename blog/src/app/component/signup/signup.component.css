@@ -1,0 +1,15 @@
+.h-100 {  background-image : url(/assets/images/2433830.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .centerbox {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+  
+  }
+  button { width: 100%; }
+  mat-form-field { width: 100%; }
+  

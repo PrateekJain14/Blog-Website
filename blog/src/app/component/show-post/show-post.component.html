@@ -1,0 +1,19 @@
+<div style="text-align: center;">Category</div>
+<div class="category">
+    <a *ngFor="let item of category" (click)="getBlogByCategory(item)"> {{item}}</a>
+</div>
+<hr>
+<div class="list-group" *ngIf="posts.length">
+    <a *ngFor="let post of posts" [routerLink]="['/fullPost']" [queryParams]="{ id: post._id }" [routerLinkActive]="'active'" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{post.title}}</h5>
+            <small>{{post.createdAt| date}}</small>
+        </div>
+        <small>read more...</small>
+        <div style="float: right;"><small> Author: {{post?.author?.name}}</small></div>
+    </a>
+</div>
+
+<div class="list-group" *ngIf="!posts.length">
+   No Post Found
+</div>
